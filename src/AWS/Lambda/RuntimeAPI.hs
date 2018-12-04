@@ -24,6 +24,9 @@ module AWS.Lambda.RuntimeAPI (
     jsonMediaType,
     ) where
 
+import Prelude ()
+import Prelude.Compat
+
 import Control.Concurrent.Async (waitCatch, withAsync)
 import Control.DeepSeq          (NFData (..), force)
 import Control.Exception        (SomeException, displayException, evaluate)

@@ -47,9 +47,14 @@ module AWS.Lambda.RuntimeAPI.Package (
     packageAwsLambda,
     Conf (..),
     defaultConf,
+    confAdditionalLibs,
+    confReadFile,
     -- * Utilities
     findExtraLibs,
     ) where
+
+import Prelude ()
+import Prelude.Compat
 
 import Control.Applicative   (Alternative (..), optional)
 import Control.DeepSeq       (force)
@@ -107,6 +112,12 @@ defaultConf = Conf
     { _confAdditionalLibs = []
     , _confReadFile       = LBS.readFile
     }
+
+confAdditionalLibs :: Functor f => ([String] -> f [String]) -> Conf -> f Conf
+confAdditionalLibs f conf = (\x -> conf { _confAdditionalLibs = x}) <$> f (_confAdditionalLibs conf)
+
+confReadFile :: Functor f => ((FilePath -> IO LBS.ByteString) -> f (FilePath -> IO LBS.ByteString)) -> Conf -> f Conf
+confReadFile f conf = (\x -> conf { _confReadFile = x}) <$> f (_confReadFile conf)
 
 -------------------------------------------------------------------------------
 -- LDD magic - find dependencies
