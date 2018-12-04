@@ -1,5 +1,5 @@
 cabal-version:       2.2
-name:                aws-lambda-runtime-api
+name:                aws-lambda-runtime
 version:             0
 
 synopsis: Haskell on AWS Lambda Runtime API
@@ -11,16 +11,19 @@ description:
   .
   * "AWS.Lambda.RuntimeAPI.Package" is for packaging them.
 
+homepage:     https://github.com/phadej/aws-lambda-haskell-runtime
+bug-reports:  https://github.com/phadej/aws-lambda-haskell-runtime/issues
 license:      Apache-2.0
 license-file: LICENSE
 author:       Oleg Grenrus <oleg.grenrus@iki.fi>
 maintainer:   Oleg Grenrus <oleg.grenrus@iki.fi>
+copyright:    (c) 2018 Futurice, 2018 Oleg Grenrus
 
 tested-with:  GHC ==8.2.2 || ==8.4.4 || ==8.6.2
 
 source-repository head
   type:     git
-  location: https://github.com/phadej/aws-lambda-runtime-api
+  location: https://github.com/phadej/aws-lambda-haskell-runtime
 
 library
   ghc-options:      -Wall
@@ -65,7 +68,7 @@ executable example-lambda
   build-depends:
     , base
     , aeson
-    , aws-lambda-runtime-api
+    , aws-lambda-runtime
     , text
 
   -- additional dependencies
