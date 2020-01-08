@@ -39,16 +39,16 @@ import Network.HTTP.Media       (MediaType)
 import System.Environment       (lookupEnv)
 import System.IO                (hFlush, stdout)
 
-import qualified Data.Aeson             as Aeson
-import qualified Data.ByteString        as BS
-import qualified Data.ByteString.Char8  as BS8
-import qualified Data.ByteString.Lazy   as LBS
-import qualified Data.Map.Strict        as Map
-import qualified Data.Text              as Text
-import qualified Data.Time.Clock.System as Time
-import qualified Network.HTTP.Client    as H
-import qualified Network.HTTP.Media     as HTTP
-import qualified Network.HTTP.Types     as HTTP
+import qualified Data.Aeson                    as Aeson
+import qualified Data.ByteString               as BS
+import qualified Data.ByteString.Char8         as BS8
+import qualified Data.ByteString.Lazy          as LBS
+import qualified Data.Map.Strict               as Map
+import qualified Data.Text                     as Text
+import qualified Data.Time.Clock.System.Compat as Time
+import qualified Network.HTTP.Client           as H
+import qualified Network.HTTP.Media            as HTTP
+import qualified Network.HTTP.Types            as HTTP
 
 -------------------------------------------------------------------------------
 -- Types
